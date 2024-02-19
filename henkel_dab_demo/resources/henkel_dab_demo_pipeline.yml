@@ -1,0 +1,12 @@
+# The main pipeline for henkel_dab_demo
+resources:
+  pipelines:
+    henkel_dab_demo_pipeline:
+      name: henkel_dab_demo_pipeline
+      target: henkel_dab_demo_${bundle.environment}
+      libraries:
+        - notebook:
+            path: ../src/dlt_pipeline.ipynb
+
+      configuration:
+        bundle.sourcePath: /Workspace/${workspace.file_path}/src
